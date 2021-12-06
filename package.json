@@ -1,0 +1,14 @@
+{
+  "name": "vue-router-middleware",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Antoine Bellion",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@rollup/plugin-babel": "^5.3.0",
+    "rollup": "^2.60.2"
+  }
+}
