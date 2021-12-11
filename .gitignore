@@ -4,5 +4,7 @@
 # App
 node_modules
 package-lock.json
-test/app/__build__
-test/app/__cache__
+
+# Test
+test/__build__
+test/__cache__
