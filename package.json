@@ -8,6 +8,7 @@
   "devDependencies": {
     "@parcel/transformer-vue": "^2.0.1",
     "parcel": "^2.0.1",
-    "vue": "^3.2.24"
+    "vue": "^3.2.24",
+    "vue-router": "^4.0.12"
   }
 }
