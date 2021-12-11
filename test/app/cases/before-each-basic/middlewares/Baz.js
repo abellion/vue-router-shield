@@ -1,7 +1,8 @@
 import * as Logger from '../../../Logger'
+import { BeforeEach } from '../../../../../src'
 
-export default (to, from, next) => {
+export default BeforeEach((to, from, next) => {
   Logger.log('Baz called')
 
   next()
-}
+})
