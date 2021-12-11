@@ -1,8 +1,8 @@
 import * as Vue from 'vue'
 import * as VueRouter from 'vue-router'
 
-import App from './components/App.vue'
-import Foo from './components/Foo.vue'
+import App from './views/App.vue'
+import Foo from './views/Foo.vue'
 
 const router = VueRouter.createRouter({
   history: VueRouter.createWebHistory('/cases/before-each'),
