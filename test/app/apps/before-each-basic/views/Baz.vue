@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Logs from '../../../utils/Logs.vue'
+import Logs from '../../../components/Logs.vue'
 
 export default {
   components: {

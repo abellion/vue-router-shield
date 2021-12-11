@@ -13,7 +13,7 @@ import BarMiddleware from './middlewares/Bar'
 import BazMiddleware from './middlewares/Baz'
 
 const router = VueRouter.createRouter({
-  history: VueRouter.createWebHistory('/cases/before-each-basic'),
+  history: VueRouter.createWebHistory('/apps/before-each-basic'),
   routes: [
     {
       path: '/foo',
