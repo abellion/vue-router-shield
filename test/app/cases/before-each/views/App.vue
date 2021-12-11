@@ -1,13 +1,17 @@
 <template>
   <div class="bg-white border-b">
     <div class="container flex items-center justify-center p-6 mx-auto text-gray-600 capitalize">
-      <a href="#" class="border-b-2 text-gray-800 border-blue-500 mx-1.5 sm:mx-6">
-        Foo
-      </a>
+      <router-link to="/foo" custom v-slot="{ isActive, href, navigate }">
+        <a :href="href" v-on:click="navigate" class="border-b-2 text-gray-800 mx-1.5 sm:mx-6 hover:border-blue-500" :class="{ 'border-blue-500': isActive === true, 'border-transparent': isActive !== true }">
+          Foo
+        </a>
+      </router-link>
 
-      <a href="#" class="border-b-2 border-transparent hover:text-gray-800 hover:border-blue-500 mx-1.5 sm:mx-6">
-        Bar
-      </a>
+      <router-link to="/bar" custom v-slot="{ isActive, href, navigate }">
+        <a :href="href" v-on:click="navigate" class="border-b-2 text-gray-800 mx-1.5 sm:mx-6 hover:border-blue-500" :class="{ 'border-blue-500': isActive === true, 'border-transparent': isActive !== true }">
+          Bar
+        </a>
+      </router-link>
     </div>
   </div>
 
