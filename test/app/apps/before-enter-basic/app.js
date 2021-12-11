@@ -10,6 +10,7 @@ import Baz from './views/Baz.vue'
 import Qux from './views/Qux.vue'
 
 import FooMiddleware from './middlewares/Foo'
+import FooBarMiddleware from './middlewares/FooBar'
 
 const router = VueRouter.createRouter({
   history: VueRouter.createWebHistory('/apps/before-enter-basic'),
@@ -17,7 +18,7 @@ const router = VueRouter.createRouter({
     {
       path: '/foo',
       component: Foo,
-      meta: { middlewares: [FooMiddleware] },
+      meta: { middlewares: [FooMiddleware, FooBarMiddleware] },
       children: [
         {
           path: 'baz',
@@ -31,7 +32,8 @@ const router = VueRouter.createRouter({
     },
     {
       path: '/bar',
-      component: Bar
+      component: Bar,
+      meta: { middlewares: [FooBarMiddleware] }
     },
     {
       path: '/:pathMatch(.*)*',
