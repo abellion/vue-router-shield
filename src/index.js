@@ -1,4 +1,6 @@
-import Middleware from './middleware'
+import Middleware from './Middleware'
+
+export BeforeEach from './Middlewares/BeforeEach'
 
 export default function install(vue, options) {
   if (Boolean(options) !== true || options.hasOwnProperty('router') !== true) {
