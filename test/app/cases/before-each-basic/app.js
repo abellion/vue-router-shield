@@ -6,9 +6,11 @@ import middleware from '../../../../src'
 import App from './views/App.vue'
 import Foo from './views/Foo.vue'
 import Bar from './views/Bar.vue'
+import Baz from './views/Baz.vue'
 
 import FooMiddleware from './middlewares/Foo'
 import BarMiddleware from './middlewares/Bar'
+import BazMiddleware from './middlewares/Baz'
 
 const router = VueRouter.createRouter({
   history: VueRouter.createWebHistory('/cases/before-each-basic'),
@@ -16,7 +18,14 @@ const router = VueRouter.createRouter({
     {
       path: '/foo',
       component: Foo,
-      meta: { middlewares: [FooMiddleware] }
+      meta: { middlewares: [FooMiddleware] },
+      children: [
+        {
+          path: 'baz',
+          component: Baz,
+          meta: { middlewares: [BazMiddleware] }
+        }
+      ]
     },
     {
       path: '/bar',
