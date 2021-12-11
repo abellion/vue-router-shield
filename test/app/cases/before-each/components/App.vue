@@ -10,4 +10,8 @@
       </a>
     </div>
   </div>
+
+  <div class="container mx-auto py-6">
+    <router-view></router-view>
+  </div>
 </template>
