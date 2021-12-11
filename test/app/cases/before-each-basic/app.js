@@ -7,16 +7,21 @@ import App from './views/App.vue'
 import Foo from './views/Foo.vue'
 import Bar from './views/Bar.vue'
 
+import FooMiddleware from './middlewares/Foo'
+import BarMiddleware from './middlewares/Bar'
+
 const router = VueRouter.createRouter({
   history: VueRouter.createWebHistory('/cases/before-each-basic'),
   routes: [
     {
       path: '/foo',
       component: Foo,
+      meta: { middlewares: [FooMiddleware] }
     },
     {
       path: '/bar',
       component: Bar,
+      meta: { middlewares: [BarMiddleware] }
     },
     {
       path: '/:pathMatch(.*)*',
