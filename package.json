@@ -6,6 +6,8 @@
   "author": "Antoine Bellion",
   "license": "MIT",
   "devDependencies": {
-    "parcel": "^2.0.1"
+    "@parcel/transformer-vue": "^2.0.1",
+    "parcel": "^2.0.1",
+    "vue": "^3.2.24"
   }
 }
