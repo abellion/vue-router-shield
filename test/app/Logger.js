@@ -1,4 +1,6 @@
-export const logs = []
+import { reactive } from 'vue'
+
+export const logs = reactive([])
 
 export function log(msg) {
   logs.push(
