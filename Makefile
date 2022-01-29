@@ -1,8 +1,10 @@
+DOCKER_IMG=cypress/browsers:node14.0.0-chrome84
+
 install:
-	@docker run --rm -i -t -w /app -v ${PWD}:/app node:14-slim npm install
+	@docker run --rm -i -t -w /app -v ${PWD}:/app ${DOCKER_IMG} npm install
 
 cli:
-	@docker run --rm -i -t -w /app -v ${PWD}:/app node:14-slim bash
+	@docker run --rm -i -t -w /app -v ${PWD}:/app ${DOCKER_IMG} bash
 
 serve:
-	@docker run --rm -i -t -p 8080:8080 -w /app -v ${PWD}:/app node:14-slim npx parcel serve --port 8080 --dist-dir test/__build__ --cache-dir test/__cache__ test/app/index.html
+	@docker run --rm -i -t -w /app -v ${PWD}:/app -p 8080:8080 ${DOCKER_IMG} npx parcel serve --port 8080 --dist-dir test/__build__ --cache-dir test/__cache__ test/app/index.html
