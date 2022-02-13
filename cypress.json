@@ -1,1 +1,4 @@
-{}
+{
+  "baseUrl": "http://host.docker.internal:8080",
+  "integrationFolder": "test/e2e"
+}
