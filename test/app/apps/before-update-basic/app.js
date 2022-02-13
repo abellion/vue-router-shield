@@ -2,6 +2,7 @@ import * as Vue from 'vue'
 import * as VueRouter from 'vue-router'
 
 import middleware from '../../../../src'
+import cypress from '../../Cypress'
 
 import App from './views/App.vue'
 import Foo from './views/Foo.vue'
@@ -30,4 +31,5 @@ const app = Vue.createApp(App)
 
 app.use(router)
 app.use(middleware, { router })
+app.use(cypress)
 app.mount('#app')
