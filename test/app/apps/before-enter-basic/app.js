@@ -34,7 +34,14 @@ const router = VueRouter.createRouter({
     {
       path: '/bar',
       component: Bar,
-      meta: { middlewares: [MiddlewareB] }
+      meta: { middlewares: [MiddlewareB] },
+      children: [
+        {
+          path: 'baz',
+          component: Logs,
+          meta: { middlewares: [MiddlewareC] },
+        }
+      ]
     },
     {
       path: '/:pathMatch(.*)*',
