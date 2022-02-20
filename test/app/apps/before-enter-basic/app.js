@@ -7,11 +7,11 @@ import cypress from '../../Cypress'
 import App from './views/App.vue'
 import Foo from './views/Foo.vue'
 import Bar from './views/Bar.vue'
-import Baz from './views/Baz.vue'
-import Qux from './views/Qux.vue'
+import Logs from './views/Logs.vue'
 
 import MiddlewareA from './middlewares/MiddlewareA'
 import MiddlewareB from './middlewares/MiddlewareB'
+import MiddlewareC from './middlewares/MiddlewareC'
 
 const router = VueRouter.createRouter({
   history: VueRouter.createWebHistory('/apps/before-enter-basic'),
@@ -22,12 +22,12 @@ const router = VueRouter.createRouter({
       meta: { middlewares: [MiddlewareA, MiddlewareB] },
       children: [
         {
-          path: 'baz',
-          component: Baz
+          path: 'bar',
+          component: Logs
         },
         {
-          path: 'qux',
-          component: Qux
+          path: 'baz',
+          component: Logs
         }
       ]
     },

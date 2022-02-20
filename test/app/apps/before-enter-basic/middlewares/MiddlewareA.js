@@ -5,7 +5,7 @@ export default BeforeEnter((to, from, next) => {
   Logger.log('Middleware A called')
 
   if (to.path === '/foo') {
-    next({ path: '/foo/baz' })
+    next({ path: '/foo/bar' })
   } else {
     next()
   }

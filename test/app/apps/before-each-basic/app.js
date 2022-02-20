@@ -6,7 +6,7 @@ import cypress from '../../Cypress'
 
 import App from './views/App.vue'
 import Foo from './views/Foo.vue'
-import Bar from './views/Bar.vue'
+import Logs from './views/Logs.vue'
 
 import MiddlewareA from './middlewares/MiddlewareA'
 import MiddlewareB from './middlewares/MiddlewareB'
@@ -21,7 +21,7 @@ const router = VueRouter.createRouter({
       children: [
         {
           path: 'bar',
-          component: Bar,
+          component: Logs,
           meta: { middlewares: [MiddlewareB] }
         }
       ]
