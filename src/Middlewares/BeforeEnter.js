@@ -4,7 +4,7 @@ export default (middleware) => {
   const wrapper = (to, from, next) => {
     let skip = false
 
-    if (last && last.from === from && last.to !== to) {
+    if (last && last.from.path === from.path && last.to.path !== to.path) {
       skip = true
     }
 
