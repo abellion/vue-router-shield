@@ -23,6 +23,10 @@ const router = VueRouter.createRouter({
           meta: { middlewares: [MiddlewareA] }
         }
       ]
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: '/foo'
     }
   ]
 })
