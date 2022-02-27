@@ -1,4 +1,4 @@
-import Middleware from './Middleware'
+import Guard from './Guard'
 
 export BeforeEach from './Middlewares/BeforeEach'
 export BeforeEnter from './Middlewares/BeforeEnter'
@@ -9,7 +9,5 @@ export default function install(vue, options) {
     throw new Error('A Vue Router instance must be given to vue-router-shield')
   }
 
-  options.router.beforeEach(
-    Middleware
-  )
+  options.router.beforeEach(Guard)
 }

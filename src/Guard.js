@@ -1,18 +1,18 @@
-class Middleware {
+class Guard {
   constructor (request, next) {
     this.request = request
     this.next = next
   }
 
   /**
-   * Handle the middlewares
+   * Handle the guards
    * @return mixed
    */
   async handle () {
     const chain = this.chain()
 
-    for (let middleware of chain) {
-      const result = await this.run(middleware)
+    for (let guard of chain) {
+      const result = await this.run(guard)
 
       if (result !== undefined) {
         return this.next(result)
@@ -23,18 +23,18 @@ class Middleware {
   }
 
   /**
-   * Run a middleware
-   * @param  function middleware
+   * Run a guard
+   * @param  function guard
    * @return promise
    */
-  run (middleware) {
+  run (guard) {
     return new Promise((resolve) => {
-      middleware(this.request.to, this.request.from, resolve)
+      guard(this.request.to, this.request.from, resolve)
     })
   }
 
   /**
-   * Build the middleware chain
+   * Build the guards chain
    * @return array
    */
   chain () {
@@ -51,5 +51,5 @@ class Middleware {
 }
 
 export default (to, from, next) => {
-  new Middleware({ to, from }, next).handle()
+  new Guard({ to, from }, next).handle()
 }
