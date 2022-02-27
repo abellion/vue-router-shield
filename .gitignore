@@ -6,8 +6,7 @@ node_modules
 package-lock.json
 
 # Test
-test/__build__
-test/__cache__
+test/.parcel
 
 # Cypress
 cypress
