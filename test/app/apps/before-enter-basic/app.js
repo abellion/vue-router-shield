@@ -9,9 +9,9 @@ import Foo from './views/Foo.vue'
 import Bar from './views/Bar.vue'
 import Logs from './views/Logs.vue'
 
-import MiddlewareA from './middlewares/MiddlewareA'
-import MiddlewareB from './middlewares/MiddlewareB'
-import MiddlewareC from './middlewares/MiddlewareC'
+import MiddlewareA from './guards/MiddlewareA'
+import MiddlewareB from './guards/MiddlewareB'
+import MiddlewareC from './guards/MiddlewareC'
 
 const router = VueRouter.createRouter({
   history: VueRouter.createWebHistory('/apps/before-enter-basic'),

@@ -8,7 +8,7 @@ import App from './views/App.vue'
 import Foo from './views/Foo.vue'
 import Bar from './views/Bar.vue'
 
-import MiddlewareA from './middlewares/MiddlewareA'
+import MiddlewareA from './guards/MiddlewareA'
 
 const router = VueRouter.createRouter({
   history: VueRouter.createWebHistory('/apps/before-update-basic'),

@@ -8,8 +8,8 @@ import App from './views/App.vue'
 import Foo from './views/Foo.vue'
 import Logs from './views/Logs.vue'
 
-import MiddlewareA from './middlewares/MiddlewareA'
-import MiddlewareB from './middlewares/MiddlewareB'
+import MiddlewareA from './guards/MiddlewareA'
+import MiddlewareB from './guards/MiddlewareB'
 
 const router = VueRouter.createRouter({
   history: VueRouter.createWebHistory('/apps/before-each-basic'),
