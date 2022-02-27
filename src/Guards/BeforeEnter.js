@@ -1,4 +1,4 @@
-export default (middleware) => {
+export default (guard) => {
   let last = null
 
   const wrapper = (to, from, next) => {
@@ -24,7 +24,7 @@ export default (middleware) => {
       }
     }
 
-    middleware(to, from, next)
+    guard(to, from, next)
   }
 
   return wrapper
