@@ -8,8 +8,8 @@ import App from './views/App.vue'
 import Foo from './views/Foo.vue'
 import Logs from './views/Logs.vue'
 
-import MiddlewareA from './guards/MiddlewareA'
-import MiddlewareB from './guards/MiddlewareB'
+import GuardA from './guards/GuardA'
+import GuardB from './guards/GuardB'
 
 const router = VueRouter.createRouter({
   history: VueRouter.createWebHistory('/apps/before-each-basic'),
@@ -17,12 +17,12 @@ const router = VueRouter.createRouter({
     {
       path: '/foo',
       component: Foo,
-      meta: { guard: [MiddlewareA] },
+      meta: { guard: [GuardA] },
       children: [
         {
           path: 'bar',
           component: Logs,
-          meta: { guard: [MiddlewareB] }
+          meta: { guard: [GuardB] }
         }
       ]
     },

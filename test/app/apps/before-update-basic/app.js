@@ -8,7 +8,7 @@ import App from './views/App.vue'
 import Foo from './views/Foo.vue'
 import Bar from './views/Bar.vue'
 
-import MiddlewareA from './guards/MiddlewareA'
+import GuardA from './guards/GuardA'
 
 const router = VueRouter.createRouter({
   history: VueRouter.createWebHistory('/apps/before-update-basic'),
@@ -20,7 +20,7 @@ const router = VueRouter.createRouter({
         {
           path: ':route',
           component: Bar,
-          meta: { guard: [MiddlewareA] }
+          meta: { guard: [GuardA] }
         }
       ]
     },
