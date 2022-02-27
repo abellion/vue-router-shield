@@ -1,4 +1,4 @@
-it(`calls the middlewares only once even when a redirect occurs`, () => {
+it(`calls the guards only once even when a redirect occurs`, () => {
   cy.visit('apps/before-enter-basic/foo')
 
   cy.url()
@@ -14,7 +14,7 @@ it(`calls the middlewares only once even when a redirect occurs`, () => {
     .should('contain', 'Guard B')
 })
 
-it(`doesn't call the middlewares again within the same route stack`, () => {
+it(`doesn't call the guards again within the same route stack`, () => {
   cy.visit('apps/before-enter-basic/foo/bar')
 
   cy.get('.cy-target-logs .cy-target-log')
@@ -34,7 +34,7 @@ it(`doesn't call the middlewares again within the same route stack`, () => {
     .should('have.length', 2)
 })
 
-it(`calls the middlewares when moving out and then back in the route stack`, () => {
+it(`calls the guards when moving out and then back in the route stack`, () => {
   cy.visit('apps/before-enter-basic/bar')
 
   cy.get('.cy-target-logs .cy-target-log')
@@ -82,7 +82,7 @@ it(`calls the middlewares when moving out and then back in the route stack`, () 
     .should('contain', 'Guard B')
 })
 
-it(`keeps calling the middlewares even when the navigation is aborted`, () => {
+it(`keeps calling the guards even when the navigation is aborted`, () => {
   cy.visit('apps/before-enter-basic/bar')
 
   cy.get('.cy-target-logs .cy-target-log')

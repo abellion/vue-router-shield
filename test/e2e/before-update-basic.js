@@ -1,11 +1,11 @@
-it(`doesn't call the middlewares when entering the route`, () => {
+it(`doesn't call the guards when entering the route`, () => {
   cy.visit('apps/before-update-basic/foo/bar')
 
   cy.get('.cy-target-logs .cy-target-log')
     .should('have.length', 0)
 })
 
-it(`calls the middlewares when the route updates`, () => {
+it(`calls the guards when the route updates`, () => {
   cy.visit('apps/before-update-basic/foo/bar')
 
   cy

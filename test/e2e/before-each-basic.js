@@ -1,4 +1,4 @@
-it(`calls all the middlewares within the route stack`, () => {
+it(`calls all the guards within the route stack`, () => {
   cy.visit('apps/before-each-basic/foo/bar')
 
   cy.get('.cy-target-logs .cy-target-log')
@@ -11,7 +11,7 @@ it(`calls all the middlewares within the route stack`, () => {
     .should('contain', 'Guard B')
 })
 
-it(`calls the previous middlewares on route change`, () => {
+it(`calls the previous guards on route change`, () => {
   cy.visit('apps/before-each-basic/foo')
 
   cy.get('.cy-target-logs .cy-target-log')
