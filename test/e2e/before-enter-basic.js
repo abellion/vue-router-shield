@@ -9,9 +9,9 @@ it(`calls the middlewares only once even when a redirect occurs`, () => {
 
   cy.get('.cy-target-logs .cy-target-log')
     .eq(0)
-    .should('contain', 'Middleware A')
+    .should('contain', 'Guard A')
     .next()
-    .should('contain', 'Middleware B')
+    .should('contain', 'Guard B')
 })
 
 it(`doesn't call the middlewares again within the same route stack`, () => {
@@ -22,9 +22,9 @@ it(`doesn't call the middlewares again within the same route stack`, () => {
 
   cy.get('.cy-target-logs .cy-target-log')
     .eq(0)
-    .should('contain', 'Middleware A')
+    .should('contain', 'Guard A')
     .next()
-    .should('contain', 'Middleware B')
+    .should('contain', 'Guard B')
 
   cy
     .get('.cy-target-foo-baz-view')
@@ -42,7 +42,7 @@ it(`calls the middlewares when moving out and then back in the route stack`, () 
 
   cy.get('.cy-target-logs .cy-target-log')
     .eq(0)
-    .should('contain', 'Middleware B')
+    .should('contain', 'Guard B')
 
   cy
     .get('.cy-target-foo-view')
@@ -53,9 +53,9 @@ it(`calls the middlewares when moving out and then back in the route stack`, () 
 
   cy.get('.cy-target-logs .cy-target-log')
     .eq(1)
-    .should('contain', 'Middleware A')
+    .should('contain', 'Guard A')
     .next()
-    .should('contain', 'Middleware B')
+    .should('contain', 'Guard B')
 
   cy
     .get('.cy-target-bar-view')
@@ -66,7 +66,7 @@ it(`calls the middlewares when moving out and then back in the route stack`, () 
 
   cy.get('.cy-target-logs .cy-target-log')
     .eq(3)
-    .should('contain', 'Middleware B')
+    .should('contain', 'Guard B')
 
   cy
     .get('.cy-target-foo-view')
@@ -77,9 +77,9 @@ it(`calls the middlewares when moving out and then back in the route stack`, () 
 
   cy.get('.cy-target-logs .cy-target-log')
     .eq(4)
-    .should('contain', 'Middleware A')
+    .should('contain', 'Guard A')
     .next()
-    .should('contain', 'Middleware B')
+    .should('contain', 'Guard B')
 })
 
 it(`keeps calling the middlewares even when the navigation is aborted`, () => {
@@ -90,7 +90,7 @@ it(`keeps calling the middlewares even when the navigation is aborted`, () => {
 
   cy.get('.cy-target-logs .cy-target-log')
     .eq(0)
-    .should('contain', 'Middleware B')
+    .should('contain', 'Guard B')
 
   cy
     .get('.cy-target-bar-baz-view')
@@ -101,7 +101,7 @@ it(`keeps calling the middlewares even when the navigation is aborted`, () => {
 
   cy.get('.cy-target-logs .cy-target-log')
     .eq(1)
-    .should('contain', 'Middleware C')
+    .should('contain', 'Guard C')
 
   cy
     .get('.cy-target-bar-baz-view')
@@ -112,5 +112,5 @@ it(`keeps calling the middlewares even when the navigation is aborted`, () => {
 
   cy.get('.cy-target-logs .cy-target-log')
     .eq(2)
-    .should('contain', 'Middleware C')
+    .should('contain', 'Guard C')
 })

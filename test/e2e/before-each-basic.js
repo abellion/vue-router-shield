@@ -6,9 +6,9 @@ it(`calls all the middlewares within the route stack`, () => {
 
   cy.get('.cy-target-logs .cy-target-log')
     .eq(0)
-    .should('contain', 'Middleware A')
+    .should('contain', 'Guard A')
     .next()
-    .should('contain', 'Middleware B')
+    .should('contain', 'Guard B')
 })
 
 it(`calls the previous middlewares on route change`, () => {
@@ -19,7 +19,7 @@ it(`calls the previous middlewares on route change`, () => {
 
   cy.get('.cy-target-logs .cy-target-log')
     .eq(0)
-    .should('contain', 'Middleware A')
+    .should('contain', 'Guard A')
 
   cy
     .get('.cy-target-foo-bar-view')
@@ -30,7 +30,7 @@ it(`calls the previous middlewares on route change`, () => {
 
   cy.get('.cy-target-logs .cy-target-log')
     .eq(1)
-    .should('contain', 'Middleware A')
+    .should('contain', 'Guard A')
     .next()
-    .should('contain', 'Middleware B')
+    .should('contain', 'Guard B')
 })
