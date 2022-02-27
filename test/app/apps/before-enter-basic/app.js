@@ -19,7 +19,7 @@ const router = VueRouter.createRouter({
     {
       path: '/foo',
       component: Foo,
-      meta: { middlewares: [MiddlewareA, MiddlewareB] },
+      meta: { guard: [MiddlewareA, MiddlewareB] },
       children: [
         {
           path: 'bar',
@@ -34,12 +34,12 @@ const router = VueRouter.createRouter({
     {
       path: '/bar',
       component: Bar,
-      meta: { middlewares: [MiddlewareB] },
+      meta: { guard: [MiddlewareB] },
       children: [
         {
           path: 'baz',
           component: Logs,
-          meta: { middlewares: [MiddlewareC] },
+          meta: { guard: [MiddlewareC] },
         }
       ]
     },

@@ -41,8 +41,8 @@ class Middleware {
     const chain = new Set()
 
     for (let route of this.request.to.matched) {
-      if (route.meta.hasOwnProperty('middlewares')) {
-        route.meta.middlewares.forEach(Set.prototype.add, chain)
+      if (route.meta.hasOwnProperty('guard')) {
+        route.meta.guard.forEach(Set.prototype.add, chain)
       }
     }
 

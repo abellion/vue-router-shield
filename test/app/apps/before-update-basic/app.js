@@ -20,7 +20,7 @@ const router = VueRouter.createRouter({
         {
           path: ':route',
           component: Bar,
-          meta: { middlewares: [MiddlewareA] }
+          meta: { guard: [MiddlewareA] }
         }
       ]
     },

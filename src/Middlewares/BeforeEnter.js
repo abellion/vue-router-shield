@@ -19,7 +19,7 @@ export default (middleware) => {
     }
 
     for (let index in from.matched) {
-      if (from.matched[index].meta.hasOwnProperty('middlewares') && from.matched[index].meta.middlewares.includes(wrapper) && from.matched[index] === to.matched[index]) {
+      if (from.matched[index].meta.hasOwnProperty('guard') && from.matched[index].meta.guard.includes(wrapper) && from.matched[index] === to.matched[index]) {
         return next()
       }
     }

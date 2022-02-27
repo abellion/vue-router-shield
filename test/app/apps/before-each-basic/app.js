@@ -17,12 +17,12 @@ const router = VueRouter.createRouter({
     {
       path: '/foo',
       component: Foo,
-      meta: { middlewares: [MiddlewareA] },
+      meta: { guard: [MiddlewareA] },
       children: [
         {
           path: 'bar',
           component: Logs,
-          meta: { middlewares: [MiddlewareB] }
+          meta: { guard: [MiddlewareB] }
         }
       ]
     },
