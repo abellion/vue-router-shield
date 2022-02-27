@@ -1,4 +1,4 @@
-it(`calls all middlewares within the stack`, () => {
+it(`calls all the middlewares within the route stack`, () => {
   cy.visit('apps/before-each-basic/foo/bar')
 
   cy.get('.cy-target-logs .cy-target-log')
@@ -11,7 +11,7 @@ it(`calls all middlewares within the stack`, () => {
     .should('contain', 'Middleware B')
 })
 
-it(`calls again the first middleware`, () => {
+it(`calls the previous middlewares on route change`, () => {
   cy.visit('apps/before-each-basic/foo')
 
   cy.get('.cy-target-logs .cy-target-log')
