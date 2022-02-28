@@ -10,4 +10,4 @@ serve:
 	@docker run --rm -i -t -w /app -v ${PWD}:/app -p 8080:8080 ${DOCKER_IMG} npx parcel serve --port 8080 --dist-dir test/.parcel --cache-dir test/.parcel test/app/index.html
 
 build:
-	@docker run --rm -i -t -w /app -v ${PWD}:/app ${DOCKER_IMG} npx parcel build --cache-dir /tmp/.parcel
+	@docker run --rm -i -t -w /app -v ${PWD}:/app ${DOCKER_IMG} npx rollup -c
