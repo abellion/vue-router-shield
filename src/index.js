@@ -1,8 +1,8 @@
 import Guard from './Guard'
 
-export BeforeEach from './Guards/BeforeEach'
-export BeforeEnter from './Guards/BeforeEnter'
-export BeforeUpdate from './Guards/BeforeUpdate'
+export { default as BeforeEach } from './Guards/BeforeEach'
+export { default as BeforeEnter } from './Guards/BeforeEnter'
+export { default as BeforeUpdate } from './Guards/BeforeUpdate'
 
 export default function install(vue, options) {
   if (Boolean(options) !== true || options.hasOwnProperty('router') !== true) {
