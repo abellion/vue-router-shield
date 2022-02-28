@@ -12,5 +12,10 @@
     "parcel": "^2.0.1",
     "vue": "^3.2.31",
     "vue-router": "^4.0.12"
+  },
+  "targets": {
+    "main": {
+      "optimize": true
+    }
   }
 }
