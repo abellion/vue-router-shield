@@ -1,3 +1,5 @@
+import { Settings } from './index'
+
 class Guard {
   constructor (request, next) {
     this.request = request
@@ -41,8 +43,8 @@ class Guard {
     const chain = new Set()
 
     for (let route of this.request.to.matched) {
-      if (route.meta.hasOwnProperty('guard')) {
-        route.meta.guard.forEach(Set.prototype.add, chain)
+      if (route.meta.hasOwnProperty(Settings.guard)) {
+        route.meta[Settings.guard].forEach(Set.prototype.add, chain)
       }
     }
 
