@@ -9,3 +9,6 @@ test/.parcel
 
 # Cypress
 cypress
+
+# Parcel
+.parcel-cache
