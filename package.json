@@ -1,12 +1,16 @@
 {
   "name": "vue-router-shield",
   "version": "1.0.0",
-  "description": "",
+  "description": "Vue Router Shield enhance the Vue.js router by adding new navigation guards capabilities",
   "source": "src/index.js",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "author": "Antoine Bellion",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abellion/vue-router-shield"
+  },
   "devDependencies": {
     "@parcel/transformer-vue": "^2.0.1",
     "cypress": "^9.5.0",
