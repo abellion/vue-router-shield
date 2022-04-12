@@ -58,34 +58,30 @@ Now, this guard must be bound to the route on which we want it to be executed. O
 
 As said above, the guards can be executed in three different ways :
 
-- `BeforeEach` guards are executed when the route they're bound to is **entered or updated**.
-- `BeforeUpdate` guards are executed **only** when the route they're bound to is **updated**.
-- `BeforeEnter` guards are executed **only** when the route they're bound to is **entered**.
-
-They are called with three arguments : the route we're going `to`, the route we're coming `from`, and a `next` function that must be called in order to validate the navigation. If you want to abort the navigation or create a redirect, either pass `false` or a route location.
-
 ```js
-// BeforeEach
+// BeforeEach guards are executed when the route they're bound to is entered or updated
 import { BeforeEach } from 'vue-router-shield'
 
 export default BeforeEach((to, from, next) => {
   next()
 })
 
-// BeforeUpdate
+// BeforeUpdate guards are executed only when the route they're bound to is updated
 import { BeforeUpdate } from 'vue-router-shield'
 
 export default BeforeUpdate((to, from, next) => {
   next()
 })
 
-// BeforeEnter
+// BeforeEnter guards are executed only when the route they're bound to is entered
 import { BeforeEnter } from 'vue-router-shield'
 
 export default BeforeEnter((to, from, next) => {
   next()
 })
 ```
+
+They are called with three arguments : the route we're going `to`, the route we're coming `from`, and a `next` function that must be called in order to validate the navigation. If you want to abort the navigation or create a redirect, either pass `false` or a route location.
 
 ## Configuration 🔽
 
