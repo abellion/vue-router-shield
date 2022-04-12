@@ -22,7 +22,7 @@ Vue.use(VueRouterShield, {
 
 ## Example 🔽
 
-Guards are defined at the route level, and can be executed when entering the route, before the route is updated, or both : you decide. Let's create a guard that will be called `BeforeEach` navigations and log a greeting message :
+Guards are defined at the route level, and can be executed before entering the route, before the route is updated, or both : you decide. Let's create a guard that will be called `BeforeEach` navigations and log a greeting message :
 
 ```js
 import { BeforeEach } from 'vue-router-shield'
