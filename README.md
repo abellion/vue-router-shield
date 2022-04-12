@@ -35,7 +35,7 @@ export default BeforeEach((to, from, next) => {
 Now, this guard must be bound to the route on which we want it to be executed. Of course, we can list as many as we want, and they'll all be called one after the other :
 
 ```js
-const router = new VueRouter({
+{
   routes: [
     {
       path: '/',
@@ -43,7 +43,7 @@ const router = new VueRouter({
       meta: { guard: [SayHello] }
     }
   ]
-})
+}
 ```
 
 ## Guards 🔽
@@ -54,7 +54,7 @@ As said above, the guards can be executed in three different ways :
 - `BeforeUpdate` guards are executed **only** when the route they're bound to is **updated**.
 - `BeforeEnter` guards are executed **only** when the route they're bound to is **entered**.
 
-They are called with three arguments : the route we're going to (`to`), the route we're coming from (`from`), and a `next` function that must be called in order to validate the navigation. If you want to abort the navigation or create a redirect, either pass `false` or a route location.
+They are called with three arguments : the route we're going `to`, the route we're coming `from`, and a `next` function that must be called in order to validate the navigation. If you want to abort the navigation or create a redirect, either pass `false` or a route location.
 
 ```js
 // BeforeEach
