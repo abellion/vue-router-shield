@@ -2,9 +2,17 @@
 
 Looking for a clean and elegent way to define navigation guards in your Vue.js application ? This library is made for you ! Whether you want to authenticate your users across your application, or just fetch some data before entering a view, this is a perfect fit.
 
-> Note : compatible with Vue.js V2 and V3 !
+**How does it differ from built in navigation guards ?**
+
+| Feature                   | Vue Router | Vue Router Shield |
+|---------------------------|------------|-------------------|
+| Route based before enter  | ✅         | ✅                 |
+| Route based before update | ❌         | ✅                 |
+| Route based before each   | ❌         | ✅                 |
 
 ## Installation 🔽
+
+> Note : compatible with Vue.js V2 and V3 !
 
 ```bash
 npm install vue-router-shield
