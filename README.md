@@ -2,6 +2,8 @@
 
 Looking for a clean and elegent way to define navigation guards in your Vue.js application ? This library is made for you ! Whether you want to authenticate your users across your application, or just fetch some data before entering a view, this is a perfect fit.
 
+> Note : compatible with Vue.js V2 and V3 !
+
 ## Installation 🔽
 
 ```bash
@@ -20,7 +22,7 @@ Vue.use(VueRouterShield, {
 
 ## Example 🔽
 
-Unlike classic [navigation guards](https://router.vuejs.org/guide/advanced/navigation-guards.html), these are defined at the route level. Doing so has several advantages, as it helps your views to stay light and allows the guards to be reused elsewhere. Using a concise syntax, you can define the guards to be executed before entering the route, before the route is updated, or both. Let's create a guard that will be called `BeforeEach` navigations and log a greeting message :
+Guards are defined at the route level, and can be executed when entering the route, before the route is updated, or both : you decide. Let's create a guard that will be called `BeforeEach` navigations and log a greeting message :
 
 ```js
 import { BeforeEach } from 'vue-router-shield'
