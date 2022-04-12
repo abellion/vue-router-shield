@@ -28,7 +28,7 @@ Vue.use(VueRouterShield, {
 })
 ```
 
-## Example 🔽
+## Usage 🔽
 
 Guards are defined at the route level, and can be executed before entering the route, before the route is updated, or both : you decide. Let's create a guard that will be called `BeforeEach` navigations and log a greeting message :
 
@@ -55,8 +55,6 @@ Now, this guard must be bound to the route on which we want it to be executed. O
   ]
 }
 ```
-
-## Guards 🔽
 
 As said above, the guards can be executed in three different ways :
 
