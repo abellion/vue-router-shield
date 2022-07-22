@@ -1,6 +1,6 @@
 {
   "name": "vue-router-shield",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue Router Shield enhance the Vue.js router by adding new navigation guards capabilities",
   "source": "src/index.js",
   "main": "dist/index.cjs.js",
