@@ -6,7 +6,7 @@ export default (guard) => {
   const wrapper = (to, from, next) => {
     let skip = false
 
-    if (last && last.from.path === from.path && last.to.path !== to.path) {
+    if (last && last.from.path === from.path && last.to.matched[last.to.matched.length - 1].path !== to.matched[to.matched.length - 1].path) {
       skip = true
     }
 

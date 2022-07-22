@@ -7,11 +7,13 @@ import cypress from '../../Cypress'
 import App from './views/App.vue'
 import Foo from './views/Foo.vue'
 import Bar from './views/Bar.vue'
+import Baz from './views/Baz.vue'
 import Logs from './views/Logs.vue'
 
 import GuardA from './guards/GuardA'
 import GuardB from './guards/GuardB'
 import GuardC from './guards/GuardC'
+import GuardD from './guards/GuardD'
 
 const router = VueRouter.createRouter({
   history: VueRouter.createWebHistory('/apps/before-enter-basic'),
@@ -34,12 +36,22 @@ const router = VueRouter.createRouter({
     {
       path: '/bar',
       component: Bar,
-      meta: { guard: [GuardB] },
       children: [
         {
           path: 'baz',
           component: Logs,
           meta: { guard: [GuardC] },
+        }
+      ]
+    },
+    {
+      path: '/baz',
+      component: Baz,
+      children: [
+        {
+          path: ':param',
+          component: Logs,
+          meta: { guard: [GuardD] }
         }
       ]
     },
